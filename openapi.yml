@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  title: بنك الزبيري - API
+  version: "1.0.0"
+  description: |
+    واجهة برمجة تطبيقات مبسطة لتطبيق بنك الزبيري.
+    تشمل نقاط نهاية لعرض المحافظ، ربط محفظة وإتمام الربط.
+servers:
+  - url: https://api.example.com
+    description: الخادم الافتراضي
+
+paths:
+  /api/wallets:
+    get:
+      summary: جلب قائمة المحافظ المتاحة
+      responses:
+        '200':
+          description: قائمة المحافظ
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                    name:
+                      type: string
+  /api/wallets/link:
+    post:
+      summary: بدء عملية ربط محفظة (إرسال OTP)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider:
+                  type: string
+                  example: JIB
+                phone:
+                  type: string
+                  example: "+967712345678"
+      responses:
+        '200':
+          description: تم إرسال OTP
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  message:
+                    type: string
+  /api/wallets/confirm:
+    post:
+      summary: تأكيد ربط المحفظة عبر OTP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider:
+                  type: string
+                  example: JIB
+                phone:
+                  type: string
+                  example: "+967712345678"
+                otp:
+                  type: string
+                  example: "1234"
+      responses:
+        '200':
+          description: تم تأكيد الربط
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+                  message:
+                    type: string
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
