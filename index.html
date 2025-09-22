@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بنك الزبيري - بوابتك للدفع الرقمي الحديث</title>
+    <style>
+        /* --- الخطوط --- */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+        /* --- الإعدادات العامة --- */
+        :root {
+            --primary-color: #0052D4;
+            --secondary-color: #65C7F7;
+            --dark-color: #121212;
+            --light-color: #FFFFFF;
+            --gray-color: #f4f4f4;
+            --text-color: #333;
+            --shadow: 0 10px 25px rgba(0, 82, 212, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            text-align: right;
+            overflow-x: hidden;
+        }
+
+        /* --- الهيكل العام --- */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* --- الهيدر والبانر الرئيسي --- */
+        .header {
+            background: linear-gradient(120deg, var(--secondary-color), var(--primary-color));
+            color: var(--light-color);
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .header .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .header .btn-contact {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .header .btn-contact:hover {
+            background-color: var(--gray-color);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* --- قسم الميزات --- */
+        .features {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            right: 50%;
+            transform: translateX(50%);
+            bottom: -15px;
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--light-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* --- قسم المحافظ الشريكة --- */
+        .wallets {
+            padding: 80px 0;
+            background-color: var(--gray-color);
+            text-align: center;
+        }
+
+        .wallets-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .wallet-logo {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            padding: 20px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            width: 180px;
+            text-align: center;
+        }
+        
+        .wallet-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            color: var(--primary-color);
+        }
+
+        /* --- الفوتر --- */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">بنك الزبيري</div>
+                <a href="#" class="btn-contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>لأول مرة في اليمن</h1>
+                <p>نربط جميع محافظك المالية ببطاقة واحدة تدعم Apple Pay والدفع اللاتلامسي. أهلاً بك في مستقبل الدفع.</p>
+                </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">لماذا بنك الزبيري؟</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon"></div>
+                        <h3>دعم Apple Pay</h3>
+                        <p>استخدم بطاقتك للدفع بسهولة وأمان عبر أجهزة آبل الخاصة بك.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"> NFC </div>
+                        <h3>دفع لاتلامسي</h3>
+                        <p>مرّر بطاقتك فوق أجهزة الدفع لإتمام عمليات الشراء بسرعة فائقة.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔗</div>
+                        <h3>كل محافظك في مكان واحد</h3>
+                        <p>نربط لك 10 من أشهر المحافظ اليمنية في بطاقة واحدة ذكية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wallets">
+            <div class="container">
+                <h2 class="section-title">المحافظ الشريكة</h2>
+                <div class="wallets-grid">
+                    <div class="wallet-logo">جيب</div>
+                    <div class="wallet-logo">ون كاش</div>
+                    <div class="wallet-logo">جوالي</div>
+                    <div class="wallet-logo">فلوسك</div>
+                    <div class="wallet-logo">كاش</div>
+                    <div class="wallet-logo">ام فلوس</div>
+                    <div class="wallet-logo">بيس</div>
+                    <div class="wallet-logo">شامل موني</div>
+                    <div class="wallet-logo">يمن والت</div>
+                    <div class="wallet-logo">محفظتي</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 بنك الزبيري (مشروع تجريبي). جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

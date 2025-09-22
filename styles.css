@@ -1,0 +1,253 @@
+/* --- الخطوط --- */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+/* --- المتغيرات اللونية والتصميمية الجديدة المستوحاة من الشعار --- */
+:root {
+    --primary-color: #FF7F27; /* البرتقالي الدافئ من الشعار */
+    --secondary-color: #F8B400; /* الذهبي/الأصفر من الشعار */
+    --dark-color: #3C424F;    /* الرمادي الداكن من الشعار */
+    --light-color: #FFFFFF;
+    --gray-color: #f8f8f8; /* رمادي فاتح للخلفيات الثانوية */
+    --text-color: #2c2c2c; /* نص داكن لقراءة أفضل */
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* ظل خفيف وأنيق */
+}
+
+/* --- الإعدادات العامة للجسم --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    text-align: right; /* For RTL layout */
+    overflow-x: hidden;
+}
+
+/* --- الهيكل العام (Container) --- */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* --- قسم الهيدر والبانر الرئيسي (Header & Hero) --- */
+.header {
+    background: linear-gradient(120deg, var(--secondary-color), var(--primary-color)); /* تدرج الألوان من الشعار */
+    color: var(--light-color);
+    padding: 20px 0;
+    position: relative;
+    /* يمكن إضافة شكل هندسي خفيف هنا إذا أردنا */
+}
+
+.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.header .btn-contact {
+    background-color: var(--dark-color); /* زر داكن ليبرز على الخلفية البرتقالية */
+    color: var(--light-color);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.header .btn-contact:hover {
+    background-color: var(--text-color); /* يصبح أغمق قليلاً عند التمرير */
+    transform: translateY(-2px);
+}
+
+.hero {
+    padding: 120px 0;
+    text-align: center;
+    background-color: var(--gray-color); /* خلفية رمادية فاتحة لقسم البانر */
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden; /* لإخفاء أي جزء زائد من الأشكال الهندسية */
+}
+
+/* إضافة لمسة هندسية مستوحاة من الشعار لخلفية الـ Hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 127, 39, 0.1); /* برتقالي فاتح */
+    transform: rotate(45deg);
+    z-index: 0;
+    border-radius: 20px;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: rgba(248, 180, 0, 0.1); /* ذهبي فاتح */
+    transform: rotate(-30deg);
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1; /* لجعل المحتوى فوق الأشكال الهندسية */
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: var(--dark-color); /* عنوان داكن واضح */
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+/* --- الأقسام والعناوين --- */
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: var(--dark-color); /* عنوان القسم داكن */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color); /* خط التأكيد باللون البرتقالي */
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+
+/* --- قسم الميزات (Features) --- */
+.features {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--light-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--gray-color); /* إضافة حد خفيف */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* الأيقونات باللون البرتقالي */
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+/* --- قسم المحافظ الشريكة (Wallets) --- */
+.wallets {
+    padding: 80px 0;
+    background-color: var(--gray-color);
+    text-align: center;
+}
+
+.wallets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.wallet-logo {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    width: 180px;
+    text-align: center;
+    border: 1px solid var(--gray-color);
+}
+
+.wallet-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    color: var(--primary-color); /* اسم المحفظة يبرز بالبرتقالي عند التمرير */
+}
+
+/* --- الفوتر (Footer) --- */
+.footer {
+    background-color: var(--dark-color); /* الفوتر باللون الرمادي الداكن */
+    color: var(--light-color);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .section-title {
+        font-size: 30px;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
