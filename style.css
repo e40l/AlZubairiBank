@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+:root {
+    --primary-color: #003366;
+    --secondary-color: #4A90E2;
+    --dark-color: #1C1C1C;
+    --light-color: #FFFFFF;
+    --gray-color: #F0F0F0;
+    --text-color: #333;
+    --shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    text-align: right;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.header {
+    background: linear-gradient(120deg, var(--secondary-color), var(--primary-color));
+    color: var(--light-color);
+    padding: 20px 0;
+    position: relative;
+}
+
+.header .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.header .btn-contact {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.header .btn-contact:hover {
+    background-color: var(--gray-color);
+    transform: translateY(-2px);
+}
+
+.hero {
+    padding: 120px 0;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.features {
+    padding: 100px 0;
+    text-align: center;
+}
+.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: var(--primary-color);
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -15px;
+    border-radius: 2px;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+.feature-card {
+    background: var(--light-color);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+.feature-card .icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.wallets {
+    padding: 80px 0;
+    background-color: var(--gray-color);
+    text-align: center;
+}
+.wallets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+.wallet-logo {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    width: 180px;
+    text-align: center;
+}
+.wallet-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    color: var(--primary-color);
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 40px 0;
+}
+.footer p {
+    margin: 0;
+    opacity: 0.8;
+}
